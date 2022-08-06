@@ -1,23 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import { hightImg, lowImg } from './Api/loadImg';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <img src={hightImg('/jcue2THX5mjQFV7EXqoQyXyLlbR.jpg')} alt="" /> */}
+      <img src={hightImg('/6MNqmGe0JjEuGX1PMjRBAEI6aXg.jpg')} alt="" />
     </div>
   );
 }
