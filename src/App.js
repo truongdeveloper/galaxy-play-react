@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import { hightImg, lowImg } from './Api/loadImg';
+import Header from './components/Hearder/Header';
 
 function App() {
   return (
     <div className="App">
-      {/* <img src={hightImg('/jcue2THX5mjQFV7EXqoQyXyLlbR.jpg')} alt="" /> */}
-      <img src={hightImg('/6MNqmGe0JjEuGX1PMjRBAEI6aXg.jpg')} alt="" />
+      <Header></Header>
+      <h1>ashjdhasjdh</h1>
     </div>
   );
 }
