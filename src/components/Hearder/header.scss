@@ -20,3 +20,14 @@ a{
     display: flex;
     gap: 1rem;
 }
+.search__area{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    :hover .icon__search {
+        color: black;
+    }
+}
+// .icon__search {
+//     color: black;
+// }

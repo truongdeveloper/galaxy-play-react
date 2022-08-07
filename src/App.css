@@ -1,9 +1,29 @@
 
 .App {
-  /* background-color: rgb(28, 28, 28); */
-  background-color: aliceblue;
+  background-color: rgb(28, 28, 28);
   color: white;
 }
-img{
+.img__logo{
   width: 100px;
+}
+.btn__1{
+  line-height: 2rem;
+  border-radius: 100px;
+  border: white 1px solid;
+  padding: 0.4rem 1.6rem;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+}
+a {
+  transition: all 0.5s ease;
+}
+.btn__1:hover{
+  background-color: white;
+}
+.btn__1:hover > a{
+  color: black;
+}
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
 }
