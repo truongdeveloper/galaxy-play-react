@@ -23,7 +23,7 @@ function Header(props) {
                     <NavLink to={"/hotro"}>Hỗ Trợ</NavLink>
                 </div>
                 <div className="search__area" >
-                    <input type="text" className="search" />
+                    <input type="text" className="search" placeholder="Name, Gener, Actor, ..."/>
                     <FaSearch className="icon__search"/>
                 </div>
                 <div className="login btn__1">
