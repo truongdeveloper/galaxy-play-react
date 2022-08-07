@@ -1,13 +1,9 @@
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .App {
-  background-color: rgb(28, 28, 28);
+  /* background-color: rgb(28, 28, 28); */
+  background-color: aliceblue;
   color: white;
 }
 img{
-  width: 50px;
+  width: 100px;
 }
