@@ -15,12 +15,12 @@ function Header(props) {
                     <img src={logo} alt="" className="img__logo"/>
                 </NavLink>
                 <div className="menu">
-                    <NavLink to={"/khophim"}>Kho Phim</NavLink>
+                    <NavLink to={"/kho-phim"}>Kho Phim</NavLink>
                     <NavLink to={"/phim-dien-anh"}>Phim Điện Ảnh</NavLink>
                     <NavLink to={"/phim-bo"}>Phim Bộ</NavLink>
                     <NavLink to={"/phim-thue"}>Phim Thuê</NavLink>
                     <NavLink to={"/khuyen-mai"}>Khuyến Mãi</NavLink>
-                    <NavLink to={"/hotro"}>Hỗ Trợ</NavLink>
+                    <NavLink to={"/ho-tro"}>Hỗ Trợ</NavLink>
                 </div>
                 <div className="search__area" >
                     <input type="text" className="search" placeholder="Name, Gener, Actor, ..."/>
