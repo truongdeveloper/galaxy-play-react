@@ -11,10 +11,14 @@ function Header(props) {
     return (
         <nav>
             <div className="nav__container">
+                <div className="menu__mobile">
+                    <img src={logo} alt="" style={{ width: '50px'}}/>
+                </div>
                 <NavLink to={""}>
                     <img src={logo} alt="" className="img__logo"/>
                 </NavLink>
                 <div className="menu">
+                    <NavLink to={'/'} >Trang chủ</NavLink>
                     <NavLink to={"/kho-phim"}>Kho Phim</NavLink>
                     <NavLink to={"/phim-dien-anh"}>Phim Điện Ảnh</NavLink>
                     <NavLink to={"/phim-bo"}>Phim Bộ</NavLink>

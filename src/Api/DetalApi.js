@@ -1,4 +1,4 @@
-import axiosClient from "./axiosClient";
+import axiosClient from "./axiosCliend";
 
 const API_KEY = "api_key=e9e9d8da18ae29fc430845952232787c";
 const DetalApi = {

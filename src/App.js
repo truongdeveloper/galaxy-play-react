@@ -13,16 +13,18 @@ function App() {
     return (
         <div className="App">
             <Header></Header>
-            <Routes>
-                <Route path="" element={<TrangChu/>} />
-                <Route path={'/kho-phim'} element={<KhoPhim/>}/>
-                <Route path={'/phim-dien-anh'} element={<PhimDienAnh/>} />
-                <Route path={'/phim-bo'} element={<PhimBo/>} />
-                <Route path={'/phim-thue'} element={<ComingSoon/>} />
-                <Route path={'/khuyen-mai'} element={<ComingSoon/>} />
-                <Route path={'/ho-tro'} element={<ComingSoon/>} />
-                <Route path={'/*'} element={<NotFound/>} />
-            </Routes>
+            <main>
+                <Routes>
+                    <Route path="" element={<TrangChu/>} />
+                    <Route path={'/kho-phim'} element={<KhoPhim/>}/>
+                    <Route path={'/phim-dien-anh'} element={<PhimDienAnh/>} />
+                    <Route path={'/phim-bo'} element={<PhimBo/>} />
+                    <Route path={'/phim-thue'} element={<ComingSoon/>} />
+                    <Route path={'/khuyen-mai'} element={<ComingSoon/>} />
+                    <Route path={'/ho-tro'} element={<ComingSoon/>} />
+                    <Route path={'/*'} element={<NotFound/>} />
+                </Routes>
+            </main>
             <Footer></Footer>
         </div>
     );
