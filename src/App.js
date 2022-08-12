@@ -22,6 +22,7 @@ function App() {
                     <Route path={'/phim-thue'} element={<ComingSoon/>} />
                     <Route path={'/khuyen-mai'} element={<ComingSoon/>} />
                     <Route path={'/ho-tro'} element={<ComingSoon/>} />
+                    <Route path={'/login'} element={<ComingSoon/>} />
                     <Route path={'/*'} element={<NotFound/>} />
                 </Routes>
             </main>

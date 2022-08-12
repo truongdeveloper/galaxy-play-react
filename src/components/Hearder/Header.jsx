@@ -4,12 +4,16 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/logoglx.svg";
 import "./header.scss";
 import {FaSearch } from 'react-icons/fa';
+import OnScroll from "../../hooks/onScroll";
 
 Header.propTypes = {};
 
 function Header(props) {
+
+    const scroll = OnScroll();
+
     return (
-        <nav>
+        <nav style={scroll? {background: 'black'}: {}} >
             <div className="nav__container">
                 <div className="menu__mobile">
                     <img src={logo} alt="" style={{ width: '50px'}}/>

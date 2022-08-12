@@ -7,18 +7,21 @@
   width: 100px;
 }
 .btn__1{
+  cursor: pointer;
   line-height: 2rem;
   border-radius: 100px;
   border: white 1px solid;
   padding: 0.4rem 1.6rem;
   font-size: 1rem;
   transition: all 0.5s ease;
+  width: fit-content;
 }
 a {
   transition: all 0.5s ease;
 }
 .btn__1:hover{
   background-color: white;
+  color: black;
 }
 .btn__1:hover > a{
   color: black;
