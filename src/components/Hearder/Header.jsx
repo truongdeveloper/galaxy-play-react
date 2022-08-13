@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/logoglx.svg";
 import "./header.scss";
 import {FaSearch } from 'react-icons/fa';
-import OnScroll from "../../hooks/onScroll";
+import useScroll from "../../hooks/onScroll";
 
 Header.propTypes = {};
 
 function Header(props) {
 
-    const scroll = OnScroll();
+    const scroll = useScroll();
 
     return (
         <nav style={scroll? {background: 'black'}: {}} >

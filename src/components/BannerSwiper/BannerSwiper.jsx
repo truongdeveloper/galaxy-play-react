@@ -8,6 +8,7 @@ import { hightImg, lowImg } from "../../Api/getImg";
 import "./BannerSwiper.scss";
 import { useNavigate } from "react-router-dom";
 import {isMobile} from 'react-device-detect';
+import { Container } from "../../styles/GlobleStyles";
 
 
 SwiperCore.use([Navigation, Pagination, Autoplay, Virtual, EffectFade]);
@@ -17,27 +18,26 @@ export default function BannerSwiper({ data }) {
   const navigate = useNavigate()
   
     function handleClick(e) {
-        console.log(e.target.id);
-      navigate(`/movie/${e.target.id}`)
+      console.log(e.target.id);
+      navigate(`/movie?id=${e.target.id}`)
     }
 
     return (
         <React.Fragment>
-          <div className="container">
-            
+          <Container>  
             <Swiper
               style={{
                 "--swiper-navigation-color": "#fff",
                 "--swiper-pagination-color": "#fff",}}
                 id="swiper"
-                // virtual
+                virtual
                 // effect="fade"
                 slidesPerView={1}
                 // slidesPerColumn={2}
                 // slidesPerColumnFill="row"
                 spaceBetween={10}
                 autoplay={{
-                    delay: 5000,
+                    delay: 6000,
                     disableOnInteraction: false,
                 }}
                 // slidesPerGroup={2}
@@ -51,7 +51,7 @@ export default function BannerSwiper({ data }) {
                   <SwiperSlide key={data.id} style={{ height: "90%" }}>
                   <div className="content-left">
                       {isMobile?
-                      <div className="content-mobile">
+                      <div className="content-mobile" >
                         <h1>{data.title}</h1>
                         <div className="btn__1" id={data.id} onClick={handleClick}>
                           Xem ngay
@@ -68,7 +68,11 @@ export default function BannerSwiper({ data }) {
                       </div>
                       }
                   </div>
-                  <div className="shadow"></div>
+                  {isMobile?
+                    null
+                    :
+                    <div className="shadow"></div>
+                  }
                   <div className="slide">
                     {isMobile?
                       <img src={lowImg(data.poster_path)} alt="Poster" className='swiper__item-img' />
@@ -80,7 +84,7 @@ export default function BannerSwiper({ data }) {
                 )})}
             </Swiper>
 
-          </div>
+          </Container>
 
         </React.Fragment>
     );

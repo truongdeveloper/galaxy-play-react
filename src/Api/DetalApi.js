@@ -2,6 +2,7 @@ import axiosClient from "./axiosCliend";
 
 const API_KEY = "api_key=e9e9d8da18ae29fc430845952232787c";
 const DetalApi = {
+    
     getFilmDetal(id) {
         const url = `/movie/${id}?${API_KEY}&append_to_response=videos`;
         return axiosClient.get(url);

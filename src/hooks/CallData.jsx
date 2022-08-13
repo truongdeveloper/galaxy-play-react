@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
 import ListsApi from "../Api/ListApi";
+import ComingSoon from "../page/ComingSoon";
 
 
-function useCallData( page) {
+function useCallData( popular ) {
 
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+
     useEffect(() => {
         const axiosPoster = async () => {
             try{
-                const newData = await ListsApi.getTopRate(page);
+                const newData = await popular;
+                console.log({newData})
                 setData(newData);
                 setLoading(false);
-                console.log(newData);
+                // console.log(newData);
             } catch(error) {
                 console.log(error)
                 setError(error)
@@ -22,6 +25,6 @@ function useCallData( page) {
         axiosPoster();
     },[])
 
-    return {data, loading, error}
+    return [data, loading, error]
 }
 export default useCallData
