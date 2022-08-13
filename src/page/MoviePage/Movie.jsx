@@ -2,7 +2,7 @@ import queryString from "query-string";
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import DetalApi from '../../Api/DetalApi';
-import { hightImg, lowImg } from '../../Api/getImg';
+import { hightImg, lowImg, veryLowImg } from '../../Api/getImg';
 import useCallData from '../../hooks/CallData';
 import './Movie.scss';
 
@@ -33,10 +33,9 @@ function Movie(props) {
         for (let i = 0; i < 5; i++) {
             actorJsx.push(
                 <div key={i} className="actor-main">
-                    <img src={lowImg(actor.cast[i].profile_path)} alt="Actor" className="img-actor" />
+                    <img src={veryLowImg(actor.cast[i].profile_path)} alt="Actor" className="img-actor" />
                     <p>{actor.cast[i].name}</p>
                     <p>({actor.cast[i].character})</p>
-
                 </div>
             )
             
@@ -79,13 +78,13 @@ function Movie(props) {
             
 
             <div id='video'>
-                {/* <iframe 
+                <iframe 
                 src={getFilm(id)} 
                 title='Film iFrame' 
                 frameBorder={0} 
                 allowFullScreen
                 className='frame-film'
-                ></iframe> */}
+                ></iframe>
             </div>
         </div>
     );

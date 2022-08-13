@@ -47,8 +47,8 @@ function Footer(props) {
                         <div className="introduce__title"><strong>HỖ TRỢ</strong></div>
                         <div className="introduce__content">
                             <p>1800 9090 (24/7)</p>
-                            <p>vanminhtruong678@gmail.com</p>
-                            <p>truongdeveloper(Github)</p>
+                            <p>vanminhtruong678 @gmail.com</p>
+                            <p>truongdeveloper (Github)</p>
                         </div>
                     </div>
                     <div className="dowload__app">

@@ -13,7 +13,8 @@ footer{
     display: flex;
     flex-direction: row;
     // flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
     
     &-left{
         display: flex;
