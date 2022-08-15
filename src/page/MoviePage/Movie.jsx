@@ -1,14 +1,11 @@
 import queryString from "query-string";
-import React from 'react';
-import { useEffect } from "react";
-import { useState } from "react";
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import DetalApi from '../../Api/DetalApi';
 import { hightImg, lowImg, veryLowImg } from '../../Api/getImg';
 import IframeMovie from "../../components/IframeMovie";
 import SwiperList from "../../components/Swiper/SwiperList";
 import useCallData from '../../hooks/CallData';
-import ComingSoon from "../ComingSoon";
 import './Movie.scss';
 
 Movie.propTypes = {
@@ -16,13 +13,15 @@ Movie.propTypes = {
 };
 
 
-function Movie({propsid}) {
+function Movie(props) {
 
     const location = useLocation();
     const id = queryString.parse(location.search).id
-   
+
     function handleClick() {
-        window.location.reload()
+        if(id !== queryString.parse(location.search).id){
+            window.location.reload()
+        }
     }
     
     const [data, loading, error] = useCallData( DetalApi.getFilmDetal(id) );
@@ -105,7 +104,7 @@ function Movie({propsid}) {
                             </div>
                             
                         </div>
-                        <h2>Trailer</h2>
+                        <h2 className="content-container">Trailer</h2>
                         <div className="trailer">
                            
                             {trailerJsx}

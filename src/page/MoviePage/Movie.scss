@@ -131,3 +131,32 @@
 .similar{
     position: relative;
 }
+@media screen and (max-width: 800px) {
+    .film-detal-info{
+        .film-detal-inforrrrr{
+            flex-direction: column;
+            .info-left {
+                width: 100%;
+                padding: 0rem;
+            }
+            .info-right {
+                width: 90%;
+                padding: 1rem;
+            }
+        }
+        
+    }
+    .img-actor{
+        width: 100px;
+        height: 100px;
+    }
+    .actor-main{
+        p{
+            width: 120px;
+        }
+    }
+    .frame-film{
+        height: 30vh;
+        width: 80vw;
+    }
+}
