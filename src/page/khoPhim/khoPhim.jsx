@@ -14,7 +14,11 @@ KhoPhim.propTypes = {
 
 function KhoPhim(props) {
 
-    const [data, loading, error] = useCallData( ListsApi.getTopRate(1) );
+    const [data, loading, error] = useCallData( ListsApi.getMovieNow(3) );
+    const [now, loadingNow, errorNow] = useCallData(ListsApi.getTopRate(1));
+    const [popular, loadingPopular, errorPopular] = useCallData(ListsApi.getPopular(2));
+    const [upComing, loadingupComing, errorupComing] = useCallData(ListsApi.getUpComing(1));
+    
     console.log({data})
     // const {data2, loading2, error2} = useCallData(2)
     return (
@@ -26,7 +30,7 @@ function KhoPhim(props) {
                     <BannerSwiper data={data}></BannerSwiper>
                 </div>
             }
-            {!(data  &&   data?.length > 0)?
+            {!(now  &&   now?.length > 0)?
                 <h1>Loading....</h1>
                 : (
                     <Container>
@@ -34,7 +38,19 @@ function KhoPhim(props) {
                             <h2 className="top-rate" style={{display: 'inline-block'}}>Top Rate</h2>
                             <FaArrowCircleRight style={{margin:'0 1rem'}}/>
                         </Link>
-                        <SwiperList data={data}></SwiperList>
+                        <SwiperList data={now}></SwiperList>
+                    </Container>
+                )
+            }
+            {!(popular  &&   popular?.length > 0)?
+                <h1>Loading....</h1>
+                : (
+                    <Container>
+                        <Link to={'/list?gener=top-rate'} >
+                            <h2 className="top-rate" style={{display: 'inline-block'}}>Popular</h2>
+                            <FaArrowCircleRight style={{margin:'0 1rem'}}/>
+                        </Link>
+                        <SwiperList data={popular}></SwiperList>
                     </Container>
                 )
             }
@@ -43,34 +59,22 @@ function KhoPhim(props) {
                 : (
                     <Container>
                         <Link to={'/list?gener=top-rate'} >
-                            <h2 className="top-rate" style={{display: 'inline-block'}}>Top Rate</h2>
+                            <h2 className="top-rate" style={{display: 'inline-block'}}>Movie Now</h2>
                             <FaArrowCircleRight style={{margin:'0 1rem'}}/>
                         </Link>
                         <SwiperList data={data}></SwiperList>
                     </Container>
                 )
             }
-            {!(data  &&   data?.length > 0)?
+            {!(upComing  &&   upComing?.length > 0)?
                 <h1>Loading....</h1>
                 : (
                     <Container>
                         <Link to={'/list?gener=top-rate'} >
-                            <h2 className="top-rate" style={{display: 'inline-block'}}>Top Rate</h2>
+                            <h2 className="top-rate" style={{display: 'inline-block'}}>Up Coming</h2>
                             <FaArrowCircleRight style={{margin:'0 1rem'}}/>
                         </Link>
-                        <SwiperList data={data}></SwiperList>
-                    </Container>
-                )
-            }
-            {!(data  &&   data?.length > 0)?
-                <h1>Loading....</h1>
-                : (
-                    <Container>
-                        <Link to={'/list?gener=top-rate'} >
-                            <h2 className="top-rate" style={{display: 'inline-block'}}>Top Rate</h2>
-                            <FaArrowCircleRight style={{margin:'0 1rem'}}/>
-                        </Link>
-                        <SwiperList data={data}></SwiperList>
+                        <SwiperList data={upComing}></SwiperList>
                     </Container>
                 )
             }

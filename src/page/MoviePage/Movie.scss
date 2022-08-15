@@ -1,6 +1,44 @@
 .frame-film{
     height: 70vh;
     width: 70vw;
+    padding: 100px;
+    z-index: 12;
+}
+#video{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    z-index: 9;
+    iframe{
+        z-index: 100;
+    }
+    
+}
+.close{
+    position:absolute;
+    top: 10%;
+    left: 10%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    z-index: 100000;
+}
+.background-position{
+
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.back-drop-movie {
+    width: 100%;
 }
 .back-drop{
     padding: 0;
@@ -20,18 +58,24 @@
     position: relative;
     top: -300px;
     display: flex;
+    flex-direction: column;
     justify-content:center;
-    .info-left {
+    .film-detal-inforrrrr{
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 30%;
-        padding: 2rem;
+        justify-content:center;
+        .info-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            padding: 2rem;
+        }
+        .info-right {
+            width: 50%;
+            padding: 2rem;
+        }
     }
-    .info-right {
-        width: 50%;
-        padding: 2rem;
-    }
+    
 }
 
 .genres-item{
@@ -77,4 +121,13 @@
     display: flex;
     flex-wrap: wrap;
     
+}
+.trailer {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+.similar{
+    position: relative;
 }

@@ -26,3 +26,7 @@ a {
 .btn__1:hover > a{
   color: black;
 }
+h2, h3, h1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}

@@ -37,7 +37,7 @@ function SwiperList({data}) {
                             <div className='movie-item'>
                                 <img src={lowImg(data.poster_path)} alt="Poster" className='swiper__item-img' />
                                 <p className='swiper__item-title'>{data.title}</p>
-                                <div className='ibm-score' >{data.vote_average}</div>
+                                <div className='ibm-score' >{Math.floor(data.vote_average)}</div>
                                 <div className="play-btn">
                                     <FaRegPlayCircle/>
                                 </div>
