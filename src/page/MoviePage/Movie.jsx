@@ -1,5 +1,6 @@
 import queryString from "query-string";
 import React, { useState } from 'react';
+import { useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import DetalApi from '../../Api/DetalApi';
 import { hightImg, lowImg, veryLowImg } from '../../Api/getImg';
@@ -16,13 +17,15 @@ Movie.propTypes = {
 function Movie(props) {
 
     const location = useLocation();
-    const id = queryString.parse(location.search).id
-
-    function handleClick() {
-        if(id !== queryString.parse(location.search).id){
-            window.location.reload()
+    const id = queryString.parse(location.search).id;
+    
+    useEffect(() => {
+        if(localStorage.PATH__CURRENT !== location.search){
+            document.location.reload(true)
         }
-    }
+        localStorage.PATH__CURRENT = location.search;
+    }, [location.search])
+
     
     const [data, loading, error] = useCallData( DetalApi.getFilmDetal(id) );
     const [actor, loadingActor, errorActor] = useCallData( DetalApi.getActor(id))
@@ -44,7 +47,7 @@ function Movie(props) {
                 <div key={i} className="actor-main">
                     <img src={veryLowImg(actor.cast[i].profile_path)} alt="Actor" className="img-actor" />
                     <p>{actor.cast[i].name}</p>
-                    <p>({actor.cast[i].character})</p>
+                    {actor.cast[i].character && <p>({actor.cast[i].character})</p>}
                 </div>
             )
             
@@ -109,7 +112,7 @@ function Movie(props) {
                            
                             {trailerJsx}
                         </div>
-                        <div className="similar" onClick={handleClick}>
+                        <div className="similar">
                             <SwiperList data={similar} ></SwiperList>
                         </div>
                         {play? <IframeMovie data={data} closeClick={closeClick} ></IframeMovie> : null}
