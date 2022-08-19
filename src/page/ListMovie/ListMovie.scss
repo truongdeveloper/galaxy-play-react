@@ -1,0 +1,25 @@
+.item{
+    min-width: 200px;
+    width: 18%
+}
+.list-item{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.title-movie-list{
+    text-align: center;
+    margin: 0;
+    padding: 100px;
+    background-position: center;
+    margin-bottom: 1rem;
+    background-image: url(../../assets/VN-vi-20220801-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+}
+
+@media screen and (max-width: 600px) {
+    .item{
+        min-width: 80px;
+        width: 50%;
+    }
+}

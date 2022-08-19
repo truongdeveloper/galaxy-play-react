@@ -12,6 +12,7 @@ import TrangChu from "./page/TrangChu/TrangChu";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Movie from "./page/MoviePage/Movie";
+import ListMovie from "./page/ListMovie/ListMovie";
 
 function App() {
     useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
                     <Route path={'/phim-dien-anh'} element={<PhimDienAnh/>} />
                     <Route path={'/phim-bo'} element={<PhimBo/>} />
                     <Route path={'/movie/*'} element={<Movie/>} />
+                    <Route path={'/list/*'} element={<ListMovie/>} />
                     <Route path={'/phim-thue'} element={<ComingSoon/>} />
                     <Route path={'/khuyen-mai'} element={<ComingSoon/>} />
                     <Route path={'/ho-tro'} element={<ComingSoon/>} />
