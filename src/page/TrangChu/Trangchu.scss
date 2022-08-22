@@ -48,9 +48,10 @@
             }
             img{
                 min-width: 140px;
-                width: 25%;
+                width: 35%;
                 border-radius: 1rem;
                 margin: 0.8rem;
+                object-fit: cover;
             }
         }
     }
