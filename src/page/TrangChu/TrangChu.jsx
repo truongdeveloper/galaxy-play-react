@@ -53,7 +53,7 @@ function TrangChu(props) {
                             <p>Siêu phẩm điện ảnh Hollywood và Disney</p>
                         </div>
                         <div className="btn__1">
-                            <NavLink to={"/kho-phim"}>Xem Ngay</NavLink>
+                            <NavLink to={"/kho-phim"}>Kho Phim</NavLink>
                         </div>
                     </div>
                 </div>
