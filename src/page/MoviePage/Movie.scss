@@ -77,7 +77,10 @@
     }
     
 }
-
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+}
 .genres-item{
     border: white 1px solid;
     padding: 0.3rem 0.8rem;
@@ -156,10 +159,16 @@
         }
     }
     .frame-film{
-        height: 56vh;
+        padding: 100px 0;
         width: 100vw;
+        height: 50vh;
     }
     .close{
         // display: none;
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 10%;
+        margin: auto;
     }
 }
