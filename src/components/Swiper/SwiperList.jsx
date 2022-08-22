@@ -21,15 +21,15 @@ function SwiperList({data}) {
     
     return (
         <React.Fragment>
-            <div className="padding" style={{padding: '0 30px'}}>
+            <div className="padding">
                 <Swiper
                 style={{
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",}}
                     id="swiper"
-                    slidesPerView={isMobile? 2: 6}
+                    slidesPerView={isMobile? 2 : 6}
                     spaceBetween={0}
-                    slidesPerGroup={isMobile? 2: 5}
+                    slidesPerGroup={isMobile? 2 : 5}
                     navigation
                 >
                     {data.map((data) => {

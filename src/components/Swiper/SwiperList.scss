@@ -1,4 +1,8 @@
 
+.padding {
+    padding: 0 30px;
+}
+
 .swiper__item-img{
     width: 100%;
 }
@@ -66,4 +70,13 @@
     background-image:linear-gradient(to right,rgba(0,0,0,0.9),rgba(0,0,0,0));
 }
 .swiper-button-next::after{
+}
+@media screen and (max-width: 800px) {
+    .padding{
+        padding: 0;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after{
+        font-size: 30px;
+    }
 }
