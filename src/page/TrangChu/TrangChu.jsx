@@ -6,6 +6,8 @@ import { Container } from '../../styles/GlobleStyles';
 import { NavLink } from 'react-router-dom';
 import { lowImg } from '../../Api/getImg';
 import './Trangchu.scss'
+import { isMobile } from 'react-device-detect';
+import loadingIMG from '../../assets/loading.webp'
 
 TrangChu.propTypes = {
     
@@ -58,20 +60,28 @@ function TrangChu(props) {
                     </div>
                 </div>
                 <div className="partner__right">
-                { loading ?
-                        <p>Loading...</p>
+                {isMobile?
+
+                    <img src={loadingIMG} alt="Mobile" />
                 :
                     <>
-                        <div>
-                            <img src={lowImg(data[2].poster_path)} alt="" />
-                            <img src={lowImg(data[4].poster_path)} alt="" className='img-middle'/>
-                            <img src={lowImg(data[6].poster_path)} alt="" />
-                        </div>
-                        <div>
-                            <img src={lowImg(data[8].poster_path)} alt="" />
-                            <img src={lowImg(data[10].poster_path)} alt="" className='img-middle'/>
-                            <img src={lowImg(data[12].poster_path)} alt="" />
-                        </div>
+                        { loading?
+
+                                <p>Loading...</p>
+                        :
+                            <>
+                                <div>
+                                    <img src={lowImg(data[2].poster_path)} alt="" />
+                                    <img src={lowImg(data[4].poster_path)} alt="" className='img-middle'/>
+                                    <img src={lowImg(data[6].poster_path)} alt="" />
+                                </div>
+                                <div>
+                                    <img src={lowImg(data[8].poster_path)} alt="" />
+                                    <img src={lowImg(data[10].poster_path)} alt="" className='img-middle'/>
+                                    <img src={lowImg(data[12].poster_path)} alt="" />
+                                </div>
+                            </>
+                        }
                     </>
                 }
                 </div>
