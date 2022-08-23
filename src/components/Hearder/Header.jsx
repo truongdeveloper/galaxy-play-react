@@ -13,7 +13,7 @@ function Header(props) {
     const scroll = useScroll();
 
     return (
-        <nav style={scroll? {background: 'black'}: {}} >
+        <nav style={scroll? {background: 'black'}:{}} >
             <div className="nav__container">
                 <div className="menu__mobile">
                     <img src={logo} alt="" style={{ width: '50px'}}/>

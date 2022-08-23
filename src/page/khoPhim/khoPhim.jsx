@@ -34,7 +34,7 @@ function KhoPhim(props) {
                 <h1>Loading....</h1>
                 : (
                     <Container>
-                        <Link to={'/list?gener=top-rate'} >
+                        <Link to={'/list?gener=movie-now'} >
                             <h2 className="top-rate" style={{display: 'inline-block'}}>Top Rate</h2>
                             <FaArrowCircleRight style={{margin:'0 1rem'}}/>
                         </Link>
@@ -46,7 +46,7 @@ function KhoPhim(props) {
                 <h1>Loading....</h1>
                 : (
                     <Container>
-                        <Link to={'/list?gener=top-rate'} >
+                        <Link to={'/list?gener=popular'} >
                             <h2 className="top-rate" style={{display: 'inline-block'}}>Popular</h2>
                             <FaArrowCircleRight style={{margin:'0 1rem'}}/>
                         </Link>
@@ -70,7 +70,7 @@ function KhoPhim(props) {
                 <h1>Loading....</h1>
                 : (
                     <Container>
-                        <Link to={'/list?gener=top-rate'} >
+                        <Link to={'/list?gener=up-coming'} >
                             <h2 className="top-rate" style={{display: 'inline-block'}}>Up Coming</h2>
                             <FaArrowCircleRight style={{margin:'0 1rem'}}/>
                         </Link>
