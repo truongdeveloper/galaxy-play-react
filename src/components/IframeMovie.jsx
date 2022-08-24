@@ -28,6 +28,7 @@ function IframeMovie({data, closeClick}) {
                 frameBorder={0} 
                 allowFullScreen
                 className='frame-film'>
+                    <h1 className='loading-iframe'>Loading...</h1>
                 </iframe>
             </div> 
 

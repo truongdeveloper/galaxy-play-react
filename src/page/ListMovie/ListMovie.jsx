@@ -1,5 +1,7 @@
 import queryString from "query-string";
 import React, { useState } from 'react';
+import { useRef } from "react";
+import { useEffect } from "react";
 import { FaRegPlayCircle } from 'react-icons/fa';
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Link, useLocation } from 'react-router-dom';
@@ -20,22 +22,49 @@ function ListMovie(props) {
     const location = useLocation();
     const gener = queryString.parse(location.search).gener;
     console.log(gener);
-    const [page, setPage] = useState(1);
+
+    const page = useRef(1);
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const axiosPoster = async () => {
+            try{
+                const newData = await ListsApi.getMovieNow(page);
+                setData(newData);
+                setLoading(false);
+                // console.log(newData);
+            } catch(error) {
+                console.log(error)
+            }
+        }
+        axiosPoster();
+    },[])
+    
     function useMoreData() {
-        const newPage = page + 1;
-        // setPage(newPage);
-        const [moreData, moreLoading, moreError] = useCallData(ListsApi.getMovieNow(newPage))
-        data.concat(moreData)
+        page.current = page.current + 1;
+        const axiosPoster = async () => {
+            try{
+                const newData1 = await ListsApi.getMovieNow(page.current);
+                setData([...data, ...newData1]);
+            } catch(error) {
+                console.log(error)
+            }
+        }
+        axiosPoster();
+        // const newData1 = [...data, ...moreData];
+        // setData(newData1)
+        // return newData1;
     }
-    const [data, loading, error] = useCallData( ListsApi.getMovieNow(1) );
 
     return (
         <Container>
             <h1 className='title-movie-list'>Movie Now</h1>
             <InfiniteScroll
+                style={{ overflowY: 'hidden' }}
                 dataLength={data.length}
-                next={useMoreData()}
-                hasMore={true}
+                next={useMoreData}
+                hasMore={page.current <= 10? true : false}
                 loader={<p>Loading...</p>}
             >
                 {(loading && !data)?
