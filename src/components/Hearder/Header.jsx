@@ -1,10 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { FaSearch } from 'react-icons/fa';
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logoglx.svg";
-import "./header.scss";
-import {FaSearch } from 'react-icons/fa';
 import useScroll from "../../hooks/onScroll";
+import "./header.scss";
+import { FaBars } from 'react-icons/fa';
+
 
 Header.propTypes = {};
 
@@ -16,7 +17,7 @@ function Header(props) {
         <nav style={scroll? {background: 'black'}:{}} >
             <div className="nav__container">
                 <div className="menu__mobile">
-                    <img src={logo} alt="" style={{ width: '50px'}}/>
+                    <FaBars className="menu__icon"/>
                 </div>
                 <NavLink to={""}>
                     <img src={logo} alt="" className="img__logo"/>
@@ -24,7 +25,7 @@ function Header(props) {
                 <div className="menu">
                     <NavLink to={'/'} >Trang chủ</NavLink>
                     <NavLink to={"/kho-phim"}>Kho Phim</NavLink>
-                    <NavLink to={"/phim-dien-anh"}>Phim Điện Ảnh</NavLink>
+                    <NavLink to={"/phim-dien-anh?gener=movie-now"}>Phim Điện Ảnh</NavLink>
                     <NavLink to={"/phim-bo"}>Phim Bộ</NavLink>
                     <NavLink to={"/phim-thue"}>Phim Thuê</NavLink>
                     <NavLink to={"/khuyen-mai"}>Khuyến Mãi</NavLink>

@@ -1,18 +1,16 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Hearder/Header";
 import ComingSoon from "./page/ComingSoon";
 import KhoPhim from "./page/khoPhim/khoPhim";
-import NotFound from "./page/NotFound";
-import PhimBo from "./page/phimBo/phimBo";
-import PhimDienAnh from "./page/phimDienAnh/phimDienAnh";
-import TrangChu from "./page/TrangChu/TrangChu";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Movie from "./page/MoviePage/Movie";
 import ListMovie from "./page/ListMovie/ListMovie";
+import Movie from "./page/MoviePage/Movie";
+import NotFound from "./page/NotFound";
+import TrangChu from "./page/TrangChu/TrangChu";
 
 function App() {
     useEffect(() => {
@@ -29,8 +27,8 @@ function App() {
                 <Routes>
                     <Route path="" element={<TrangChu/>} />
                     <Route path={'/kho-phim'} element={<KhoPhim/>}/>
-                    <Route path={'/phim-dien-anh'} element={<PhimDienAnh/>} />
-                    <Route path={'/phim-bo'} element={<PhimBo/>} />
+                    <Route path={'/phim-dien-anh*'} element={<ListMovie/>} />
+                    <Route path={'/phim-bo'} element={<ComingSoon/>} />
                     <Route path={'/movie/*'} element={<Movie/>} />
                     <Route path={'/list/*'} element={<ListMovie/>} />
                     <Route path={'/phim-thue'} element={<ComingSoon/>} />

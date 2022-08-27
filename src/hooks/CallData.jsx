@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import ListsApi from "../Api/ListApi";
-import ComingSoon from "../page/ComingSoon";
 
 
 function useCallData( popular ) {

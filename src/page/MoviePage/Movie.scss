@@ -19,6 +19,14 @@
     }
     
 }
+.loading-iframe{
+    width: 25%;
+    position: absolute;
+    margin: auto;
+    right: 40%;
+    bottom: 40%;
+    z-index: -1;
+}
 .close{
     position:absolute;
     top: 10%;

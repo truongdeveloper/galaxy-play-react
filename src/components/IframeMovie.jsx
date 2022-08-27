@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { hightImg } from '../Api/getImg';
 import {FaRegWindowClose } from 'react-icons/fa';
+import loadingImg from '../assets/loader_cat.gif'
 
 
 IframeMovie.propTypes = {
@@ -22,13 +23,13 @@ function IframeMovie({data, closeClick}) {
         <div id='video'>
             <div className="background-position">
                 <FaRegWindowClose className='close' onClick={handleClick}/>
+                <img src={loadingImg} alt="Loading"  className='loading-iframe'/>
                 <iframe 
                 src={getFilm(data.id)} 
                 title='Film iFrame' 
                 frameBorder={0} 
                 allowFullScreen
                 className='frame-film'>
-                    <h1 className='loading-iframe'>Loading...</h1>
                 </iframe>
             </div> 
 
