@@ -19,6 +19,9 @@ a{
     justify-content: space-between;
     align-items: center;
 }
+.menu__mobile-icon{
+    display: none;
+}
 .menu__mobile{
     display: none;
 }
@@ -68,13 +71,33 @@ input:focus{
         background-image: linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,0.9));
         position: fixed;
     }
-    .menu__mobile{
+    .menu__mobile-icon{
         padding-left: 10px;
         display: block;
         width: 30px;
+        z-index: 1000;
         .menu__icon {
             width: 100%;
             height: 100%;
+        }
+    }
+    .menu__mobile{
+        display: block;
+        position:absolute;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        align-items: center;
+        width: calc(100% + 2px);
+        left: -1px;
+        background-color: rgb(21, 21, 21);
+        height: 100vh;
+        z-index: 999;
+        padding-top: 3rem;
+        > a {
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 18px;
         }
     }
     .menu,
@@ -96,7 +119,5 @@ input:focus{
 
 @media screen and (max-width: 600px) {
 
-    input:focus ~ nav{
-        display: none;
-    }
+   
 }

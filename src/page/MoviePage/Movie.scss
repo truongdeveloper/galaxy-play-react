@@ -48,6 +48,7 @@
 .back-drop-movie {
     width: 100%;
 }
+
 .back-drop{
     padding: 0;
     width: 100%;
@@ -147,6 +148,7 @@
     .film-detal-info{
         .film-detal-inforrrrr{
             flex-direction: column;
+            align-items: center;
             .info-left {
                 width: 100%;
                 padding: 0rem;
@@ -180,4 +182,14 @@
         bottom: 10%;
         margin: auto;
     }
+}
+
+@media screen and (max-width: 800px) {
+    .info-left{
+        max-width: 250px;
+    }
+    .film-detal-info{
+        top: -200px;
+    }
+
 }
