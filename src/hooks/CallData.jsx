@@ -11,7 +11,7 @@ function useCallData( popular ) {
         const axiosPoster = async () => {
             try{
                 const newData = await popular;
-                console.log({newData})
+                // console.log({newData})
                 setData(newData);
                 setLoading(false);
                 // console.log(newData);

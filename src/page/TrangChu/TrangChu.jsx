@@ -23,7 +23,7 @@ function TrangChu(props) {
                 const newData = await ListsApi.getMovieNow();
                 setData(newData);
                 setLoading(false);
-                console.log(newData);
+                // console.log(newData);
             } catch(error) {
                 console.log(error)
             }

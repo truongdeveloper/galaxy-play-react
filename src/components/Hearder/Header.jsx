@@ -7,7 +7,7 @@ import "./header.scss";
 import { FaBars } from 'react-icons/fa';
 import { useState } from "react";
 import { isMobile, isMobileOnly } from "react-device-detect";
-
+import {FiSearch} from 'react-icons/fi';
 
 Header.propTypes = {};
 
@@ -16,12 +16,20 @@ function Header(props) {
     const scroll = useScroll();
 
     const [menu, setMenu] = useState(false);
-    console.log(menu)
     function handleClick() {
         if(menu){
             setMenu(false);
         }else{
             setMenu(true);
+        }
+    }
+    const [searchArea, setSearchArea] = useState(false);
+
+    function handleSearch() {
+        if(searchArea) {
+            setSearchArea(false);
+        }else {
+            setSearchArea(true);
         }
     }
 
@@ -57,10 +65,29 @@ function Header(props) {
                     <NavLink to={"/khuyen-mai"} data-aos="fade-up">Khuyến Mãi</NavLink>
                     <NavLink to={"/ho-tro"} data-aos="fade-up">Hỗ Trợ</NavLink>
                 </div>
-                <div className="search__area" >
-                    <input type="text" className="search" placeholder="Name, Gener, Actor, ..."/>
-                    <FaSearch className="icon__search"/>
-                </div>
+                
+                {isMobile?
+                    
+                    <FiSearch className="icon__search" onClick={handleSearch}/>
+                    
+                :
+                    <div className="search__area" >
+                        <input type="text" className="search" placeholder="Name, Gener, Actor, ..."/>
+                        <FaSearch className="icon__search"/>
+                    </div>
+                }
+
+                {isMobile?
+
+                    <div className="search__table-mobile" style={ searchArea? { height: '100vh'} : null}>
+                       
+                    </div>
+                :
+                    null
+                }
+                    
+
+                
                 <div className="login btn__1">
                     <NavLink to={"/login"}>Đăng Nhập</NavLink>
                 </div>
