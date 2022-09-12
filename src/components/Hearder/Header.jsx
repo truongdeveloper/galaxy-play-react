@@ -8,8 +8,14 @@ import { FaBars } from 'react-icons/fa';
 import { useState } from "react";
 import { isMobile, isMobileOnly } from "react-device-detect";
 import {FiSearch} from 'react-icons/fi';
+import styled from "styled-components";
 
 Header.propTypes = {};
+
+const Search = styled.div`
+
+
+`
 
 function Header(props) {
 
@@ -32,6 +38,7 @@ function Header(props) {
             setSearchArea(true);
         }
     }
+    
 
     return (
         <nav style={scroll? {background: 'black'}:{}} >
@@ -46,27 +53,25 @@ function Header(props) {
                         null
                     :
                     <div className="menu__mobile" onClick={handleClick}>
-                        <NavLink to={'/'} data-aos="fade-up">Trang chủ</NavLink>
-                        <NavLink to={"/kho-phim"} data-aos="fade-up">Kho Phim</NavLink>
-                        <NavLink to={"/phim-dien-anh?gener=movie-now"} data-aos="fade-up">Phim Điện Ảnh</NavLink>
-                        <NavLink to={"/phim-bo"} data-aos="fade-up">Phim Bộ</NavLink>
-                        <NavLink to={"/phim-thue"} data-aos="fade-up">Phim Thuê</NavLink>
-                        <NavLink to={"/khuyen-mai"} data-aos="fade-up">Khuyến Mãi</NavLink>
-                        <NavLink to={"/ho-tro"} data-aos="fade-up">Hỗ Trợ</NavLink>
+                        <NavLink to={'/'} >Trang chủ</NavLink>
+                        <NavLink to={"/kho-phim"} >Kho Phim</NavLink>
+                        <NavLink to={"/phim-dien-anh?gener=movie-now"} >Phim Điện Ảnh</NavLink>
+                        <NavLink to={"/phim-bo"} >Phim Bộ</NavLink>
+                        <NavLink to={"/phim-thue"} >Phim Thuê</NavLink>
                     </div>
                     
                 }
                 <div className="menu" onClick={handleClick}>
-                    <NavLink to={'/'} data-aos="fade-up">Trang chủ</NavLink>
-                    <NavLink to={"/kho-phim"} data-aos="fade-up">Kho Phim</NavLink>
-                    <NavLink to={"/phim-dien-anh?gener=movie-now"} data-aos="fade-up">Phim Điện Ảnh</NavLink>
-                    <NavLink to={"/phim-bo"} data-aos="fade-up">Phim Bộ</NavLink>
-                    <NavLink to={"/phim-thue"} data-aos="fade-up">Phim Thuê</NavLink>
-                    <NavLink to={"/khuyen-mai"} data-aos="fade-up">Khuyến Mãi</NavLink>
-                    <NavLink to={"/ho-tro"} data-aos="fade-up">Hỗ Trợ</NavLink>
+                    <NavLink to={'/'} >Trang chủ</NavLink>
+                    <NavLink to={"/kho-phim"} >Kho Phim</NavLink>
+                    <NavLink to={"/phim-dien-anh?gener=movie-now"} >Phim Điện Ảnh</NavLink>
+                    <NavLink to={"/phim-bo"} >Phim Bộ</NavLink>
+                    <NavLink to={"/phim-thue"} >Phim Thuê</NavLink>
                 </div>
+
+                <FiSearch className="icon__search" onClick={handleSearch}/>
                 
-                {isMobile?
+                {/* {isMobile?
                     
                     <FiSearch className="icon__search" onClick={handleSearch}/>
                     
@@ -75,12 +80,21 @@ function Header(props) {
                         <input type="text" className="search" placeholder="Name, Gener, Actor, ..."/>
                         <FaSearch className="icon__search"/>
                     </div>
-                }
+                } */}
+
+                {/* {searchArea?
+                    <div className="search__table" style={ { height: '100vh', width: '60vw', float: 'right' } }>
+                        <input type="text" className="search-input" style={{width: "100%"}} placeholder='Name, Gener, Actor, ...' />
+                    </div>
+                :
+                    null
+            
+                } */}
 
                 {isMobile?
 
                     <div className="search__table-mobile" style={ searchArea? { height: '100vh'} : null}>
-                       
+                       <input type="text" className="search-input" style={{width: "100%", position: 'absolute'}} placeholder='Name, Gener, Actor, ...' />
                     </div>
                 :
                     null

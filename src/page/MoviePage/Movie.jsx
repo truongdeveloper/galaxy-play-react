@@ -31,7 +31,7 @@ function Movie(props) {
     const [actor, loadingActor, errorActor] = useCallData( DetalApi.getActor(id))
     const [similar, loadingSimilar, errorSimilar] = useCallData( DetalApi.getSimilar(id) )
     const [play , setPlay] = useState(false)
-    
+    console.log(data)
     function handlePlayClick() {
         setPlay(true);
     }
@@ -81,7 +81,7 @@ function Movie(props) {
             :
                 <div className="film-detal">
                     
-                    <div className="back-drop" style={{backgroundImage:`url(${hightImg(data.backdrop_path)})`}}></div>
+                    <div className="back-drop" style={{backgroundImage:`url(${hightImg(data.backdrop_path? data.backdrop_path : null)})`}}></div>
                     <div className="film-detal-info" >
                         <div className="film-detal-inforrrrr">
                             <div className="info-left">

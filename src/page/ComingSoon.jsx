@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { BtnHome } from './NotFound';
 import { NavLink } from 'react-router-dom';
 import DevelopImg from '../assets/developing.svg'
+import { useEffect } from 'react';
 
 ComingSoon.propTypes = {
     
 };
 
 function ComingSoon(props) {
+
     return (
         <BtnHome>
             <center>

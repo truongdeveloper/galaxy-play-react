@@ -76,7 +76,7 @@ function ListMovie(props) {
                     style={{ overflowY: 'hidden' }}
                     dataLength={data.length}
                     next={useMoreData}
-                    hasMore={page.current <= 10? true : false}
+                    hasMore={page.current <= 20? true : false}
                     loader={<p>Loading...</p>}
                 >
                     {(loading && !data)?
