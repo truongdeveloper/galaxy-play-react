@@ -113,6 +113,7 @@ function Movie(props) {
                             {trailerJsx}
                         </div>
                         <div className="similar">
+                            <h2 className="content-container">Similar</h2>
                             <SwiperList data={similar} ></SwiperList>
                         </div>
                         {play? <IframeMovie data={data} closeClick={closeClick} ></IframeMovie> : null}

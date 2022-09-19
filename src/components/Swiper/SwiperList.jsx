@@ -10,6 +10,7 @@ import "swiper/css/effect-fade";
 import "./SwiperList.scss";
 import {FaRegPlayCircle } from 'react-icons/fa';
 import { isMobile } from 'react-device-detect';
+import {errorImg} from '../../assets/error-404-with-the-cute-french-fries-mascot-free-vector.jpg'
 
 SwiperList.propTypes = {
     
@@ -38,7 +39,7 @@ function SwiperList({data}) {
                     <div className="slide" data-aos="fade-up">
                         <Link to={`/movie?id=${data.id}`}>
                             <div className='movie-item'>
-                                <img src={lowImg(data.poster_path)} alt="Poster" className='swiper__item-img' />
+                                <img src={lowImg(data.poster_path)} onError={(e) => {e.target.onerror = null ; e.target.src = 'https://static.vecteezy.com/system/resources/thumbnails/003/393/218/small_2x/error-404-with-the-cute-french-fries-mascot-free-vector.jpg'}} className='swiper__item-img' />
                                 <p className='swiper__item-title'>{data.title}</p>
                                 <div className='ibm-score' >{Math.floor(data.vote_average)}</div>
                                 <div className="play-btn">

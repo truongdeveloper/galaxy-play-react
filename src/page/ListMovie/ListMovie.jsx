@@ -85,10 +85,10 @@ function ListMovie(props) {
                         <div className='list-item'>
                         {data.map((data, idx) => {
                             return(
-                            <div className="item" data-aos="fade-up" key={idx}>
+                            <div className="item" key={idx} data-aos="fade-up">
                                 <Link to={`/movie?id=${data.id}`}>
                                     <div className='movie-item'>
-                                        <img src={lowImg(data.poster_path)} alt="Poster" className='swiper__item-img' />
+                                        <img src={lowImg(data.poster_path)} alt="Poster" onError={(e) => {e.target.onerror = null ; e.target.src = 'https://static.vecteezy.com/system/resources/thumbnails/003/393/218/small_2x/error-404-with-the-cute-french-fries-mascot-free-vector.jpg'}} className='swiper__item-img' />
                                         <p className='swiper__item-title'>{data.title}</p>
                                         <div className='ibm-score' >{Math.floor(data.vote_average)}</div>
                                         <div className="play-btn">
