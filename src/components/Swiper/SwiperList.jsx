@@ -10,7 +10,6 @@ import "swiper/css/effect-fade";
 import "./SwiperList.scss";
 import {FaRegPlayCircle } from 'react-icons/fa';
 import { isMobile } from 'react-device-detect';
-import {errorImg} from '../../assets/error-404-with-the-cute-french-fries-mascot-free-vector.jpg'
 
 SwiperList.propTypes = {
     

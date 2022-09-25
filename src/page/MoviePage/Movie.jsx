@@ -85,7 +85,7 @@ function Movie(props) {
                     <div className="film-detal-info" >
                         <div className="film-detal-inforrrrr">
                             <div className="info-left">
-                                <img src={lowImg(data.poster_path)} alt="Poster" className='poster'/>
+                                <img src={lowImg(data.poster_path)} alt="Poster" onError={(e) => {e.target.onerror = null ; e.target.src = 'https://static.vecteezy.com/system/resources/thumbnails/003/393/218/small_2x/error-404-with-the-cute-french-fries-mascot-free-vector.jpg'}} className='poster'/>
                                 <a href="#video" className="btn">
                                     <div className="btn-play" onClick={handlePlayClick}>Xem Phim</div>
                                 </a>
@@ -105,7 +105,7 @@ function Movie(props) {
                                 </div>
                                 
                             </div>
-                            
+                                    
                         </div>
                         <h2 className="content-container">Trailer</h2>
                         <div className="trailer">

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaSearch } from 'react-icons/fa';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logoglx.svg";
 import useScroll from "../../hooks/onScroll";
 import "./header.scss";
@@ -69,38 +69,9 @@ function Header(props) {
                     <NavLink to={"/phim-thue"} >Phim Thuê</NavLink>
                 </div>
 
-                <FiSearch className="icon__search" onClick={handleSearch}/>
-                
-                {/* {isMobile?
-                    
+                <Link to={'/search'}>
                     <FiSearch className="icon__search" onClick={handleSearch}/>
-                    
-                :
-                    <div className="search__area" >
-                        <input type="text" className="search" placeholder="Name, Gener, Actor, ..."/>
-                        <FaSearch className="icon__search"/>
-                    </div>
-                } */}
-
-                {/* {searchArea?
-                    <div className="search__table" style={ { height: '100vh', width: '60vw', float: 'right' } }>
-                        <input type="text" className="search-input" style={{width: "100%"}} placeholder='Name, Gener, Actor, ...' />
-                    </div>
-                :
-                    null
-            
-                } */}
-
-                {isMobile?
-
-                    <div className="search__table-mobile" style={ searchArea? { height: '100vh'} : null}>
-                       <input type="text" className="search-input" style={{width: "100%", position: 'absolute'}} placeholder='Name, Gener, Actor, ...' />
-                    </div>
-                :
-                    null
-                }
-                    
-
+                </Link>
                 
                 <div className="login btn__1">
                     <NavLink to={"/login"}>Đăng Nhập</NavLink>

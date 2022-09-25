@@ -10,6 +10,7 @@ import KhoPhim from "./page/khoPhim/khoPhim";
 import ListMovie from "./page/ListMovie/ListMovie";
 import Movie from "./page/MoviePage/Movie";
 import NotFound from "./page/NotFound";
+import SearchPage from "./page/SearchPage/SearchPage";
 import TrangChu from "./page/TrangChu/TrangChu";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                     <Route path={'/phim-dien-anh*'} element={<ListMovie/>} />
                     <Route path={'/phim-bo'} element={<ComingSoon/>} />
                     <Route path={'/movie/*'} element={<Movie/>} />
+                    <Route path="/search/*" element={<SearchPage/>} />
                     <Route path={'/list/*'} element={<ListMovie/>} />
                     <Route path={'/phim-thue'} element={<ComingSoon/>} />
                     <Route path={'/khuyen-mai'} element={<ComingSoon/>} />
