@@ -1,9 +1,9 @@
 import axiosClient from "./axiosCliend";
 
-const API_KEY = "api_key=e9e9d8da18ae29fc430845952232787c";
-const DetalApi = {
+const API_KEY = `api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}`;
+const DetailAPI = {
     
-    getFilmDetal(id) {
+    getFilmDetail(id) {
         const url = `/movie/${id}?${API_KEY}&append_to_response=videos`;
         return axiosClient.get(url);
     },
@@ -24,4 +24,4 @@ const DetalApi = {
     },
 };
 
-export default DetalApi;
+export default DetailAPI;
