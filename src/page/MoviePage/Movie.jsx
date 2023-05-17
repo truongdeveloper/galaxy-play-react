@@ -28,6 +28,7 @@ function Movie(props) {
 
     
     const [data, loading, error] = useCallData( DetalApi.getFilmDetal(id) );
+    console.log(data)
     const [actor, loadingActor, errorActor] = useCallData( DetalApi.getActor(id))
     const [similar, loadingSimilar, errorSimilar] = useCallData( DetalApi.getSimilar(id) )
     const [play , setPlay] = useState(false)

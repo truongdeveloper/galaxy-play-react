@@ -37,7 +37,7 @@ export default function BannerSwiper({ data }) {
                 // slidesPerColumnFill="row"
                 spaceBetween={10}
                 autoplay={{
-                    delay: 6000,
+                    delay: 3000,
                     disableOnInteraction: false,
                 }}
                 // slidesPerGroup={2}
