@@ -19,8 +19,6 @@ function KhoPhim(props) {
     const [popular, loadingPopular, errorPopular] = useCallData(ListsApi.getPopular(2));
     const [upComing, loadingupComing, errorupComing] = useCallData(ListsApi.getUpComing(1));
     
-    // console.log({data})
-    // const {data2, loading2, error2} = useCallData(2)
     return (
         <React.Fragment>
             {!(data  &&   data?.length > 0)?
