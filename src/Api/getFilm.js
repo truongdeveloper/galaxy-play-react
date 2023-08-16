@@ -1,6 +1,6 @@
 
 const getFilm = (id) => {
-    const url = `https://www.2embed.to/embed/tmdb/movie?id=${id}`
+    const url = `https://multiembed.mov/?video_id=${id}&tmdb=1`
     return url;
 }
 
