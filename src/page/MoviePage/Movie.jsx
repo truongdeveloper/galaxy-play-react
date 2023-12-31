@@ -21,7 +21,10 @@ function Movie(props) {
     const location = useLocation();
     const dispatch = useDispatch();
 
-    const id = queryString.parse(location.search).id;
+    let id = queryString.parse(location.search).id;
+    if(id === undefined){
+        id = 10;
+    }
     
     const {isSuccess, data: movie} = useSelector((state) => state?.movie);
 
@@ -31,6 +34,7 @@ function Movie(props) {
         }
         localStorage.PATH__CURRENT = location.search;
     }, [location.search])
+
 
     useEffect(() => {
       if(id) {
@@ -42,6 +46,7 @@ function Movie(props) {
 
     const [actor, loadingActor, errorActor] = useCallData( DetailAPI.getActor(id))
     const [similar, loadingSimilar, errorSimilar] = useCallData( DetailAPI.getSimilar(id) )
+
     const [play , setPlay] = useState(false)
     console.log(movie)
     function handlePlayClick() {
@@ -74,7 +79,6 @@ function Movie(props) {
                 height="280"
                 key={idx}
                 src={`https://www.youtube.com/embed/${arr.key}`}
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="Embedded youtube"

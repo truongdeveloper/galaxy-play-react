@@ -17,6 +17,7 @@ function KhoPhim(props) {
     const [data, loading, error] = useCallData( ListsApi.getMovieNow(3) );
     const [now, loadingNow, errorNow] = useCallData(ListsApi.getTopRate(1));
     const [popular, loadingPopular, errorPopular] = useCallData(ListsApi.getPopular(2));
+    console.log(popular);
     const [upComing, loadingupComing, errorupComing] = useCallData(ListsApi.getUpComing(1));
     
     return (

@@ -1,0 +1,16 @@
+.search-link {
+    display: block;
+    margin: 0 auto;
+    min-width: 300px;
+    width: 30%;
+    padding: 5px 10px;
+    background-color: black;
+}
+.search-result {
+    height: 280px;
+    overflow: hidden;
+}
+.search-link:hover {
+    color: black;
+    background-color: white;
+}

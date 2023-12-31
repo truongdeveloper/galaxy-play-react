@@ -45,18 +45,6 @@ a{
     height: 30px;
     margin-right: 10px;
 }
-input {
-    // position: absolute;
-    width: 0;
-    outline: none;
-    border: none;
-    border-radius: 1rem;
-    padding: 0.3rem;
-    background-color: rgb(45, 45, 45);
-    color: white;
-    font-size: 18px;
-    transition: width 0.3s ease;
-}
 .active{
     // font-weight: bold;
     color: blue;
@@ -64,9 +52,7 @@ input {
 .search__area:hover > input{
     width: 200px;
 }
-input:focus{
-    width: 200px;
-}
+
 .search-input {
     background-color: white;
 }
